@@ -1,0 +1,2 @@
+E:\Projects\csharp\JustDo\JustDo\ClientApp\obj\Release\ClientApp.njsproj.CoreCompileInputs.cache
+E:\Projects\csharp\JustDo\JustDo\ClientApp\bin\Microsoft.NodejsTools.WebRole.dll

@@ -1,0 +1,30 @@
+<div class="card mb-3">
+  <div class="card-header" [class.text-light]="todo.priority == priority.High || todo.priority == priority.Low" [class.bg-danger]="todo.priority == priority.High" [class.bg-warning]="todo.priority == priority.Medium" [class.bg-primary]="todo.priority == priority.Low" [class.bg-light]="todo.priority == priority.None">
+    <div class="d-flex align-items-center">
+      <input type="checkbox" class="done-checkbox" [(ngModel)]="todo.done" (change)="updateDone()" />
+      <h5 class="mb-0 ml-2 flex-grow-1">{{todo.title}}</h5>
+      <button type="button" class="close" [class.text-light]="todo.priority == priority.High || todo.priority == priority.Low" [class.text-dark]="todo.priority == priority.None || todo.priority == priority.Medium" (click)="delete()">
+        <span class="h3 mb-0 font-weight-bold">×</span>
+      </button>
+    </div>
+  </div>
+  <div class="card-body" [class.done]="todo.done">
+    <h6 *ngIf="todo.description" class="card-title">
+      {{todo.description}}
+    </h6>
+    <h6 *ngIf="!todo.description" class="card-subtitle">
+      <i>No description</i>
+    </h6>
+    <div class="form-inline mt-2">
+      <div class="input-group mb-2">
+        <select class="form-control" [(ngModel)]="todo.priority" (change)="updatePriority()" [class.text-danger]="todo.priority == priority.High" [class.text-warning]="todo.priority == priority.Medium" [class.text-primary]="todo.priority == priority.Low" [class.text-muted]="todo.priority == priority.None">
+          <option class="text-danger" [(ngValue)]="priority.High">High priority</option>
+          <option class="text-warning" [(ngValue)]="priority.Medium">Medium priority</option>
+          <option class="text-primary" [(ngValue)]="priority.Low">Low priority</option>
+          <option class="text-muted" [(ngValue)]="priority.None">Not a priority</option>
+        </select>
+      </div>
+      <div class="input-group"><input type="datetime-local" class="form-control" [ngModel]="todo.dueDate | date: dateFormat" (ngModelChange)="dateChanged($event)" (change)="updateDate()" /></div>
+    </div>
+  </div>
+</div>

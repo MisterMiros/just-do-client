@@ -1,0 +1,20 @@
+<form class="form-inline" [formGroup]="formGroup" (ngSubmit)="submit()">
+  <div class="input-group mr-2 mb-2">
+    <input type="text" class="form-control" formControlName="title" placeholder="Title" />
+  </div>
+  <div class="input-group mr-2 mb-2">
+    <input type="text" class="form-control" formControlName="description" placeholder="Description" />
+  </div>
+  <div class="input-group mr-2 mb-2">
+    <select class="form-control" formControlName="priority" [class.text-danger]="priority.value == priorityEnum.High" [class.text-warning]="priority.value == priorityEnum.Medium" [class.text-primary]="priority.value == priorityEnum.Low" [class.text-muted]="priority.value == priorityEnum.None">
+      <option class="text-danger" [(ngValue)]="priorityEnum.High">High priority</option>
+      <option class="text-warning" [(ngValue)]="priorityEnum.Medium">Medium priority</option>
+      <option class="text-primary" [(ngValue)]="priorityEnum.Low">Low priority</option>
+      <option class="text-muted" [(ngValue)]="priorityEnum.None">Not a priority</option>
+    </select>
+  </div>
+  <div class="input-group mr-2 mb-2">
+    <input type="datetime-local" class="form-control" formControlName="dueDate" />
+  </div>
+  <button type="submit" class="btn btn-primary mb-2" [disabled]="formGroup.invalid">Add</button>
+</form>
