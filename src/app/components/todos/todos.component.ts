@@ -11,12 +11,12 @@ import { Router } from '@angular/router';
 })
 export class TodosComponent implements OnInit {
 
-  private todoPages: TodoPage[]
+  public todoPages: TodoPage[]
 
-  private error = false
-  private errorMessage = ''
+  public error = false
+  public errorMessage = ''
 
-  private loading = true
+  public loading = true
 
   constructor(
     private todoDataService: TodoDataService,

@@ -11,25 +11,25 @@ import { Router } from '@angular/router';
 })
 export class SignInComponent implements OnInit {
 
-  private error = false;
-  private errorMessage = '';
+  public error = false;
+  public errorMessage = '';
 
-  private email = new FormControl('', [
+  public email = new FormControl('', [
     Validators.required,
     Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$")
   ])
-  private password = new FormControl('', [
+  public password = new FormControl('', [
     Validators.required
   ])
 
-  private formGroup = new FormGroup({
+  public formGroup = new FormGroup({
     email: this.email,
     password: this.password
   })
 
   constructor(
-    public authenticationService: BasicAuthenticationService,
-    public router: Router
+    private authenticationService: BasicAuthenticationService,
+    private router: Router
   ) { }
 
   ngOnInit() {

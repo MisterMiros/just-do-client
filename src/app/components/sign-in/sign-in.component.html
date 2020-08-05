@@ -11,7 +11,7 @@
         <div class="form-group">
           <input type="password" placeholder="Password" class="form-control" [class.is-invalid]="password.invalid  && password.touched" formControlName="password" />
         </div>
-        <div *ngIf="error" class="alert alert-dange">
+        <div *ngIf="error" class="alert alert-danger">
           An error occured, while trying to registrate new user: <br />
           {{errorMessage}}
         </div>

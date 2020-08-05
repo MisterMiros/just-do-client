@@ -7,7 +7,7 @@
       </div>
       <hr />
       <div class="mb-4">
-        <app-add-todo (added)="onAdded(value)"></app-add-todo>
+        <app-add-todo (added)="onAdded($event)"></app-add-todo>
       </div>
       <div class="mb-3" *ngFor="let page of todoPages">
         <h2>{{page.date | date: 'longDate'}}</h2>

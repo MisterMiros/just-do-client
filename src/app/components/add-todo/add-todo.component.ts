@@ -14,22 +14,22 @@ import { DATE_FORMAT } from '../../app.constants';
 })
 export class AddTodoComponent implements OnInit {
 
-  private priorityEnum = Priority;
+  public priorityEnum = Priority;
 
-  private title = new FormControl('', [
+  public title = new FormControl('', [
     Validators.required,
     Validators.minLength(3)
   ]);
 
-  private description = new FormControl('');
+  public description = new FormControl('');
  
-  private priority = new FormControl(Priority.None);
+  public priority = new FormControl(Priority.None);
 
-  private dueDate = new FormControl(formatDate(new Date(), DATE_FORMAT, 'en_US'), [
+  public dueDate = new FormControl(formatDate(new Date(), DATE_FORMAT, 'en_US'), [
     Validators.required
   ]);
 
-  private formGroup = new FormGroup({
+  public formGroup = new FormGroup({
     title: this.title,
     description: this.description,
     priority: this.priority,

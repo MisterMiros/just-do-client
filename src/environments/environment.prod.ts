@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiSource: null
+  apiSource: "https://mbogatyrev-justdo-api.azurewebsites.net"
 };

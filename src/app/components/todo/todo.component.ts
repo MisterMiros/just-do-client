@@ -12,7 +12,7 @@ import { PutTodoRequest } from '../../objects/requests/put-todo-request';
 })
 export class TodoComponent implements OnInit {
 
-  private dateFormat = DATE_FORMAT;
+  public dateFormat = DATE_FORMAT;
 
   @Input()
   public todo: Todo;
@@ -26,7 +26,7 @@ export class TodoComponent implements OnInit {
   @Output()
   public error = new EventEmitter<string>();
 
-  private priority = Priority;
+  public priority = Priority;
 
   constructor(
     private todoDataService: TodoDataService

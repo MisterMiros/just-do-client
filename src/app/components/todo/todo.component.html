@@ -18,10 +18,10 @@
     <div class="form-inline mt-2">
       <div class="input-group mb-2">
         <select class="form-control" [(ngModel)]="todo.priority" (change)="updatePriority()" [class.text-danger]="todo.priority == priority.High" [class.text-warning]="todo.priority == priority.Medium" [class.text-primary]="todo.priority == priority.Low" [class.text-muted]="todo.priority == priority.None">
-          <option class="text-danger" [(ngValue)]="priority.High">High priority</option>
-          <option class="text-warning" [(ngValue)]="priority.Medium">Medium priority</option>
-          <option class="text-primary" [(ngValue)]="priority.Low">Low priority</option>
-          <option class="text-muted" [(ngValue)]="priority.None">Not a priority</option>
+          <option class="text-danger" [ngValue]="priority.High">High priority</option>
+          <option class="text-warning" [ngValue]="priority.Medium">Medium priority</option>
+          <option class="text-primary" [ngValue]="priority.Low">Low priority</option>
+          <option class="text-muted" [ngValue]="priority.None">Not a priority</option>
         </select>
       </div>
       <div class="input-group"><input type="datetime-local" class="form-control" [ngModel]="todo.dueDate | date: dateFormat" (ngModelChange)="dateChanged($event)" (change)="updateDate()" /></div>
